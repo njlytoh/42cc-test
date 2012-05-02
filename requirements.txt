@@ -17,3 +17,5 @@ mock==0.8.0
 nose==1.1.2
 simplejson==2.1.2
 virtualenv==1.4.9
+wsgiref==0.1.2
+
