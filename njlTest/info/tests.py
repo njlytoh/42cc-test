@@ -24,12 +24,12 @@ class TestInfoModel(TestCase):
         Tests info model. Tests also its Singleton property status(only one item should be created in the db)
         """
 
-        obj_0 = InfoSingleton.objects.create(name='Asdf', surname='Tom')
+        obj_0 = InfoSingleton.objects.create(name='Asdf', surname='Tom', date_of_birth="1983-11-02")
         self.assertEqual(InfoSingleton.objects.count(), 1)
         self.assertEqual(InfoSingleton.objects.all()[0].surname, 'Tom')
         self.assertEqual(InfoSingleton.objects.all()[0].name, 'Asdf')
 
-        obj = InfoSingleton.objects.create(name='Andriy', surname='Tomchuk', date_of_birth='03.11.1983', 
+        obj = InfoSingleton.objects.create(name='Andriy', surname='Tomchuk', date_of_birth="1983-11-02", 
                                             bio='Some biographic info about myself',    
                                             email='njlytoh@gmail.com', jabber='njlytoh@gmail.com',
                                             skype='njlytoh', other_contacts='phone: +3809374736283')
