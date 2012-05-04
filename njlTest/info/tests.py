@@ -45,4 +45,8 @@ class TestInfoModel(TestCase):
         
         c = Client()
         response = c.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertNotEqual(   response.content.find('Some biographic info about myself'), -1)
+
+
 
