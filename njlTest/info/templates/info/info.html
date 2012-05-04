@@ -1,21 +1,71 @@
 
 <html>
     <head>
+        <style type="text/css">
+            div.left_column{
+                float: left;
+                padding: 10px;
+                width: 290px;
+                text-align: left;
+                /*border: 1px solid gray;*/
+                }
+
+            div.right_column{
+                float: right;
+                padding: 10px;
+                width: 290px;
+                text-align: left;
+                /*border: 1px solid gray;*/
+            }
+            div.cleaner{
+                clear: both;
+            }
+            div.container {
+                width: 650px;
+                margin: 0px auto;
+            }
+            body {
+                margin:50px 0px;
+                padding:0px;
+                text-align:center;
+            }
+        </style>
     </head>
     <body>
         <h1> 42 Coffee Cups Test Assignment </h1>
-        <div id='left_column'>
-            <div id='name'>
-                {{ info.name }}
+        <div class="container">
+            <div class='left_column'>
+                <div id='name'>
+                    {{ info.name }}
+                </div>
+                <div id='last_name'>
+                    {{ info.surname }}
+                </div>
+                <div id='date_of_birth'>
+                    {{ info.date_of_birth }}
+                </div>
+                <div id='bio'>
+                    {{ info.bio }}
+                </div>
             </div>
-            <div id='last_name'>
-                {{ info.last_name }}
+            <div class="right_column">
+                <div id="contact">
+                    Contacts
+                </div>
+                <div id="email">
+                    E-Mail: {{ info.email }}
+                </div>
+                <div>
+                    Jabber: {{ info.jabber }}
+                </div>
+                <div>
+                    Skype: {{ info.skype }}
+                </div>
+                <div>
+                    Other contacts : {{ info.other_contacts }}
+                </div>
             </div>
-            <div id='date_of_birth'>
-                {{ info.date_of_birth }}
-            </div>
-            <div id='bio'>
-                {{ info.bio }}
-            </div>
+            <div class="cleaner"></div>
         </div>
+    </body>
 </html>
