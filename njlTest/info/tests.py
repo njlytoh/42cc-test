@@ -20,6 +20,12 @@ class SimpleTest(TestCase):
         self.assertEqual(1 + 1, 2)
 
 class TestInfoModel(TestCase):
+    def setUp(self):
+        obj = Info.objects.create(name='Andriy', surname='Tomchuk', date_of_birth="1983-11-02",
+                                    bio='Some biographic info about myself',
+                                    email='njlytoh@gmail.com', jabber='njlytoh@gmail.com',
+                                    skype='njlytoh', other_contacts='phone: +3809374736283')
+
     
     def test_model(self):
         """
