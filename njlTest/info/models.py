@@ -8,6 +8,8 @@ class SingletonModel(models.Model):
     class Meta:
         abstract = True
     
+    def get(self):
+        return self.objects.get(pk=1)
 
     def save(self, *args, **kwargs):
         self.id=1
@@ -29,3 +31,6 @@ class Info(SingletonModel):
     jabber = models.EmailField("Author's jabber id")
     skype = models.CharField("Skype id", max_length=30)
     other_contacts = models.TextField()
+
+
+
