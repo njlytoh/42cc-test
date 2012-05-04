@@ -3,6 +3,9 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+import os
+ROOTDIR = os.path.abspath(os.path.dirname(__file__)) 
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -96,6 +99,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'requestHistory.middleware.HistoryMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -109,7 +113,9 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(ROOTDIR, 'templates/'),
 )
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -123,6 +129,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'info',
+    'requestHistory',
 )
 
 # A sample logging configuration. The only tangible logging
