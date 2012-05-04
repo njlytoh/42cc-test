@@ -6,6 +6,8 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from django.test.client import Client
+
 
 from info.models import Info
 
@@ -38,4 +40,9 @@ class TestInfoModel(TestCase):
         self.assertEqual(Info.objects.count(), 1)
         self.assertEqual(Info.objects.all()[0].name, obj.name)
         self.assertEqual(Info.objects.all()[0].other_contacts, obj.other_contacts)
+
+    def test_view(self):
+        
+        c = Client()
+        response = c.get('/')
 
