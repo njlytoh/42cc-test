@@ -116,6 +116,9 @@ TEMPLATE_DIRS = (
     os.path.join(ROOTDIR, 'templates/'),
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'contextProcessor.context_processor.django_settings',
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -130,6 +133,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'info',
     'requestHistory',
+    'contextProcessor',
 )
 
 # A sample logging configuration. The only tangible logging
