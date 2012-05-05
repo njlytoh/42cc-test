@@ -28,3 +28,6 @@ pip-log.txt
 
 #Virtual Environment
 venv
+
+#SqLite local db
+njlTest.sqlite
